@@ -31,7 +31,7 @@ func (c *AuthMiddlewareConfig) AuthRequired(ctx *gin.Context) {
 		return
 	}
 
-	res, err := c.svc.Client.Validate(context.Background(), *pb.ValidateRequest{
+	res, err := c.svc.Client.Validate(context.Background(), &pb.ValidateRequest{
 		Token: token[1],
 	})
 
